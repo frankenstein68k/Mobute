@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		998F03F21ADAF008000A6681 /* JobDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998F03F11ADAF008000A6681 /* JobDetailViewController.swift */; };
 		BD7E98B91ADA3B4900D89A88 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7E98B81ADA3B4900D89A88 /* Record.swift */; };
 		BDF3953C1ACDFE6A00835593 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3953B1ACDFE6A00835593 /* AppDelegate.swift */; };
 		BDF3953E1ACDFE6A00835593 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3953D1ACDFE6A00835593 /* FirstViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		998F03F11ADAF008000A6681 /* JobDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailViewController.swift; sourceTree = "<group>"; };
 		BD7E98B81ADA3B4900D89A88 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		BDF395361ACDFE6A00835593 /* Mobute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mobute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF3953A1ACDFE6A00835593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				BDF3953D1ACDFE6A00835593 /* FirstViewController.swift */,
 				BDF3953F1ACDFE6A00835593 /* SecondViewController.swift */,
 				BDF395411ACDFE6A00835593 /* Main.storyboard */,
+				998F03F11ADAF008000A6681 /* JobDetailViewController.swift */,
 				BDF395441ACDFE6A00835593 /* Images.xcassets */,
 				BDF395461ACDFE6A00835593 /* LaunchScreen.xib */,
 				BDF395391ACDFE6A00835593 /* Supporting Files */,
@@ -220,6 +223,7 @@
 			files = (
 				BDF395401ACDFE6A00835593 /* SecondViewController.swift in Sources */,
 				BDF3953C1ACDFE6A00835593 /* AppDelegate.swift in Sources */,
+				998F03F21ADAF008000A6681 /* JobDetailViewController.swift in Sources */,
 				BD7E98B91ADA3B4900D89A88 /* Record.swift in Sources */,
 				BDF3953E1ACDFE6A00835593 /* FirstViewController.swift in Sources */,
 			);
