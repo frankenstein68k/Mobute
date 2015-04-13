@@ -14,8 +14,8 @@ class FirstViewController: UIViewController {
 
     @IBOutlet weak var lblStart: UILabel!
     
-    @IBOutlet weak var lblEnd: UILabel!
     
+    @IBOutlet weak var lblEnd: UILabel!
     
     var startButtonClicked:Bool = false
     var endButtonClicked:Bool = false
@@ -35,7 +35,7 @@ class FirstViewController: UIViewController {
     
     
     @IBAction func btnEnd(sender: AnyObject) {
-        if(!endButtonClicked){
+        if(startButtonClicked && !endButtonClicked){
             endButtonClicked = true
             let rightNow = NSDate()
             let dateFormatter = NSDateFormatter()
@@ -43,7 +43,8 @@ class FirstViewController: UIViewController {
             dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
             
             lblEnd.text = dateFormatter.stringFromDate(rightNow)
-            
+            //lblEnd.text = "huzzah"
+            println("Entered compound if")
         }
     }
     
