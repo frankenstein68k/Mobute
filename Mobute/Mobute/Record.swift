@@ -8,10 +8,10 @@
 
 import UIKit
 
-//General variables
-var allRecords:[Record] = []
-var currentRecordIndex:Int = -1
-//var noteTable:UiTableView?
+//Global variables
+var allRecords:[Record] = [] //An array of records, to hold all the records
+var currentRecordIndex:Int = -1 //Used for determining which record we are working with
+var recordTable:UITableView? //Used for displaying all the records
 
 let kAllRecords:String = "records"
 
