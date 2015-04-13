@@ -13,29 +13,29 @@ var allRecords:[Record] = [] //An array of records, to hold all the records
 var currentRecordIndex:Int = -1 //Used for determining which record we are working with
 var recordTable:UITableView? //Used for displaying all the records
 
-let kAllRecords:String = "records"
+let kAllRecords:String = "records" //Constant variable used as a key
 
 class Record: NSObject {
     //Variables holding the necessary information for each record object
     var startDate: String
     var endDate: String
     var company: String
-    var memo: String
+    var note: String
     
     //Constructor
     override init() {
         startDate = NSDate().description
         endDate = NSDate().description
         company = ""
-        memo = ""
+        note = ""
     }
     
     //Dictionary to hold data
     func dictionary() -> NSDictionary{
-        return ["startDate": startDate, "endDate": endDate, "company": company, "memo": memo]
+        return ["startDate": startDate, "endDate": endDate, "company": company, "note": note]
     }
     
-    //Function to save records to storage
+    //Function to save records to storage - Converts our records to dictionaries, saves dictionaries to storage
     class func saveNotes() {
         var aDictionaries:[NSDictionary] = []
         for var i:Int = 0; i < allRecords.count; i++ {
@@ -46,7 +46,7 @@ class Record: NSObject {
     }
     
     
-    //Function to load records from storage
+    //Function to load records from storage - Converts dictionaries to records, populates allRecords array 
     class func loadNotes() {
         var defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         var savedData: [NSDictionary]? = defaults.objectForKey(kAllRecords) as?
