@@ -12,6 +12,8 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    @IBOutlet weak var startBtn: UIButton!
+    @IBOutlet weak var endBtn: UIButton!
     @IBOutlet weak var lblStart: UILabel!
     
     
@@ -30,6 +32,10 @@ class FirstViewController: UIViewController {
             
             lblStart.text = dateFormatter.stringFromDate(rightNow)
             
+            endBtn.backgroundColor = UIColor.redColor() //Colours in the End Button
+            
+            startBtn.backgroundColor = UIColor.grayColor() //Greys out the Start Button
+            
         }
     }
     
@@ -45,6 +51,8 @@ class FirstViewController: UIViewController {
             lblEnd.text = dateFormatter.stringFromDate(rightNow)
             //lblEnd.text = "huzzah"
             println("Entered compound if")
+            
+            endBtn.backgroundColor = UIColor.grayColor() //Greys out the End button
         }
     }
     

@@ -15,6 +15,7 @@ class JobDetailViewController: UIViewController {
     
     var jobTitle = String()
     
+    //Assigns the job title to the label
     override func viewWillAppear(animated: Bool) {
         jobTitleLabel.text = jobTitle
     }
