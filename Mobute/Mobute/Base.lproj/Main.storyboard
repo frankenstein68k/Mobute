@@ -152,6 +152,9 @@
                                         <include reference="31b-ku-r8J"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="btnUpdate:" destination="9pv-A4-QxB" eventType="touchUpInside" id="v2N-fa-Q05"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1j-sK-dlu">
                                 <rect key="frame" x="182" y="125" width="94" height="21"/>
@@ -313,6 +316,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Job" image="New" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="UpdateBtn" destination="FU2-fR-faK" id="pqG-zF-dnJ"/>
                         <outlet property="compText" destination="Ly6-uV-H4O" id="1SU-qM-aqv"/>
                         <outlet property="endBtn" destination="upM-eA-tLd" id="9tq-Q2-YfR"/>
                         <outlet property="lblEnd" destination="IGv-IU-S6J" id="JJ5-NB-0ue"/>
@@ -495,6 +499,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mE9-6y-mmx">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="LoadTest">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="272" y="90" width="80" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="loadBtn:" destination="keF-6g-V61" eventType="touchUpInside" id="ptD-Pi-lVW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -537,6 +553,7 @@
                                 <exclude reference="kPA-8I-uko"/>
                                 <exclude reference="hzW-o0-txi"/>
                                 <exclude reference="w6W-0V-itM"/>
+                                <exclude reference="mE9-6y-mmx"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0Lk-HB-jpR"/>
@@ -577,6 +594,7 @@
                                 <include reference="kPA-8I-uko"/>
                                 <include reference="hzW-o0-txi"/>
                                 <include reference="w6W-0V-itM"/>
+                                <include reference="mE9-6y-mmx"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0Lk-HB-jpR"/>

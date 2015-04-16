@@ -15,6 +15,7 @@ class FirstViewController: UIViewController {
     //Buttons
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var endBtn: UIButton!
+    @IBOutlet weak var updateBtn: UIButton! // actually is displays as save
     
     //Labels
     @IBOutlet weak var lblStart: UILabel!
@@ -44,13 +45,25 @@ class FirstViewController: UIViewController {
             
             allRecords.insert(Record(), atIndex: 0) //Adds new object
             
+            println("Start button formatted but not saved")
+            println(lblStart.text)
+            
             //Fix this later!!!!!!
             currentRecordIndex = 0
             
             allRecords[currentRecordIndex].startDate = dateFormatter.stringFromDate(rightNow) //Saves startdate to object
+            
+            println("Saved to a record")
+            println(allRecords[currentRecordIndex].startDate)
         }
     }
     
+
+    @IBAction func btnUpdate(sender: AnyObject) {
+        println("Update button click")
+        println("*****")
+        updateObject()
+    }
     
     @IBAction func btnEnd(sender: AnyObject) {
         if(startButtonClicked && !endButtonClicked){
@@ -68,6 +81,12 @@ class FirstViewController: UIViewController {
     
 
     func updateObject(){
+        
+        
+        //Start date is saved when the start date button is clicked
+        //End date is saved when the dend date button is clicked
+        
+        //Saves the Company name
         if compText.text == ""{
                 allRecords[currentRecordIndex].company = "Untitled company"
         }
@@ -75,22 +94,20 @@ class FirstViewController: UIViewController {
             allRecords[currentRecordIndex].company = compText.text
         }
         
-        allRecords[currentRecordIndex].company = noteText.text
+        //saves note text
+        allRecords[currentRecordIndex].note = noteText.text
         
+        
+        //Saves data to permanent storage
         Record.saveNotes()
-    
         
-        /*
-        if tView.text == "" {
-            allNotes.removeAtIndex(currentNoteIndex)
-        }
-        else {
-            allNotes[currentNoteIndex].note = tView.text
-        }
-        Note.saveNotes()
-        noteTable?.reloadData()
-*/
+        println("Update before saving")
+        println(allRecords[currentRecordIndex].startDate)
+        println(allRecords[currentRecordIndex].company)
+        println(allRecords[currentRecordIndex].note)
+
     }
+
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)

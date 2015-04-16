@@ -14,6 +14,20 @@ class JobDetailViewController: UIViewController {
     
     @IBOutlet var jobTitleLabel: UILabel!
     
+    @IBAction func loadBtn(sender: AnyObject) {
+        println("LoadButton clicked")
+        retrieveObject()
+    }
+    
+    func retrieveObject(){
+        println("Retrieving data")
+        Record.loadNotes()
+        println(allRecords[0].startDate)
+        println(allRecords[0].endDate)
+        println(allRecords[0].company)
+        println(allRecords[0].note)        
+    }
+    
     var jobTitle = String()
     
     //Assigns the job title to the label
