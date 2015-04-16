@@ -14,6 +14,14 @@ class JobDetailViewController: UIViewController {
     
     @IBOutlet var jobTitleLabel: UILabel!
     
+    @IBOutlet weak var startLbl: UILabel!
+    
+    @IBOutlet weak var endLbl: UILabel!
+    
+    @IBOutlet weak var hoursLbl: UILabel!
+    
+    @IBOutlet weak var notesBox: UITextView!
+    
     @IBAction func loadBtn(sender: AnyObject) {
         println("LoadButton clicked")
         retrieveObject()
@@ -22,22 +30,65 @@ class JobDetailViewController: UIViewController {
     func retrieveObject(){
         println("Retrieving data")
         Record.loadNotes()
+    
+        
+        println("zero index")
         println(allRecords[0].startDate)
         println(allRecords[0].endDate)
         println(allRecords[0].company)
-        println(allRecords[0].note)        
+        println(allRecords[0].note)
+        
+        /*
+        println("1 index")
+        println(allRecords[1].startDate)
+        println(allRecords[1].endDate)
+        println(allRecords[1].company)
+        println(allRecords[1].note)
+        
+        println("2 index")
+        println(allRecords[2].startDate)
+        println(allRecords[2].endDate)
+        println(allRecords[2].company)
+        println(allRecords[2].note)
+        
+        println("3 index")
+        println(allRecords[3].startDate)
+        println(allRecords[3].endDate)
+        println(allRecords[3].company)
+        println(allRecords[3].note)
+
+        */
+        
     }
     
     var jobTitle = String()
     
     //Assigns the job title to the label
     override func viewWillAppear(animated: Bool) {
-        jobTitleLabel.text = jobTitle
+        retrieveObject()
+        
+        jobTitleLabel.text = allRecords[0].company
+        startLbl.text = allRecords[0].startDate
+        endLbl.text = allRecords[0].endDate
+        hoursLbl.text = "20 minutes"
+        notesBox.text = allRecords[0].note
+        
+        //Test
+        //println("The difference between start and end time is ")
+        //println(allRecords[0].endDate - allRecords[0].startDate)
+        
+        //What should be printed
+        println(jobTitleLabel.text)
+        println(startLbl.text)
+        println(endLbl.text)
+        println(hoursLbl.text)
+        println(notesBox.text)
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 

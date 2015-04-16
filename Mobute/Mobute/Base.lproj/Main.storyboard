@@ -626,7 +626,11 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="endLbl" destination="Ubu-Kk-PdN" id="cZY-Sx-t51"/>
+                        <outlet property="hoursLbl" destination="kPA-8I-uko" id="AtH-qB-e6g"/>
                         <outlet property="jobTitleLabel" destination="WjJ-xF-EeX" id="qNL-YG-dop"/>
+                        <outlet property="notesBox" destination="hzW-o0-txi" id="NaC-Mt-fD8"/>
+                        <outlet property="startLbl" destination="OHb-Yc-wGU" id="lff-9V-ZW5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlb-SO-Sfi" userLabel="First Responder" sceneMemberID="firstResponder"/>

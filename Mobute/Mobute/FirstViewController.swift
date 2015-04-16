@@ -29,9 +29,24 @@ class FirstViewController: UIViewController {
     var startButtonClicked:Bool = false
     var endButtonClicked:Bool = false
     
+    //Gets the length 
+    func findAllRecordsCount() -> Int{
+        println("Getting record count")
+        Record.loadNotes()
+        println(allRecords.count)
+        return allRecords.count
+    }
+    
+    
     @IBAction func btnStart(sender: AnyObject) {
         if(!startButtonClicked){
             startButtonClicked = true
+            
+            
+            currentRecordIndex = findAllRecordsCount()
+            println("Current Record Index is ")
+            println(currentRecordIndex)
+            
             let rightNow = NSDate()
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
@@ -48,16 +63,16 @@ class FirstViewController: UIViewController {
             println("Start button formatted but not saved")
             println(lblStart.text)
             
-            //Fix this later!!!!!!
-            currentRecordIndex = 0
             
             allRecords[currentRecordIndex].startDate = dateFormatter.stringFromDate(rightNow) //Saves startdate to object
+            
+            //Cludge to save trouble farther down the line. Just automatically give end date and end date
+            allRecords[currentRecordIndex].endDate = dateFormatter.stringFromDate(rightNow)
             
             println("Saved to a record")
             println(allRecords[currentRecordIndex].startDate)
         }
     }
-    
 
     @IBAction func btnUpdate(sender: AnyObject) {
         println("Update button click")
@@ -76,15 +91,18 @@ class FirstViewController: UIViewController {
             lblEnd.text = dateFormatter.stringFromDate(rightNow)
             
             endBtn.backgroundColor = UIColor.grayColor() //Greys out the End button
+            updateObject()
+            
+            allRecords[currentRecordIndex].endDate = dateFormatter.stringFromDate(rightNow) //Saves end date to object
+            
+            resetFirstViewController() //Resets the page for more time entries
         }
     }
     
 
     func updateObject(){
-        
-        
         //Start date is saved when the start date button is clicked
-        //End date is saved when the dend date button is clicked
+        //End date is saved when the end date button is clicked
         
         //Saves the Company name
         if compText.text == ""{
@@ -101,13 +119,23 @@ class FirstViewController: UIViewController {
         //Saves data to permanent storage
         Record.saveNotes()
         
-        println("Update before saving")
+        println("Saving to permanent storage")
         println(allRecords[currentRecordIndex].startDate)
+        println(allRecords[currentRecordIndex].endDate)
         println(allRecords[currentRecordIndex].company)
         println(allRecords[currentRecordIndex].note)
-
     }
 
+    func resetFirstViewController(){
+        println("Resetting first view controller")
+        startButtonClicked = false
+        endButtonClicked = false
+        lblStart.text = "-"
+        lblEnd.text = "-"
+        compText.text = ""
+        noteText.text = ""
+
+    }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
