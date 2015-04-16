@@ -2,9 +2,10 @@
 //  JobDetailViewController.swift
 //  Mobute
 //
-//  Created by David Piggott on 2015-04-12.
-//  Copyright (c) 2015 Neil MacKenzie. All rights reserved.
+//  Created by Neil MacKenzie & David Piggott on 2015-04-12.
+//  Copyright (c) 2015 Neil MacKenzie & David Piggott. All rights reserved.
 //
+//  This view controls the job detail screen.
 
 import UIKit
 

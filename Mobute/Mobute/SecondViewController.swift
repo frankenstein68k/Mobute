@@ -2,8 +2,8 @@
 //  SecondViewController.swift
 //  Mobute
 //
-//  Created by Neil MacKenzie on 2015-04-02.
-//  Copyright (c) 2015 Neil MacKenzie. All rights reserved.
+//  Created by Neil MacKenzie & David Piggott on 2015-04-02.
+//  Copyright (c) 2015 Neil MacKenzie & David Piggott. All rights reserved.
 //
 // This view generates the table list of the saved jobs
 

@@ -2,11 +2,11 @@
 //  FirstViewController.swift
 //  Mobute
 //
-//  Created by Neil MacKenzie on 2015-04-02.
-//  Copyright (c) 2015 Neil MacKenzie. All rights reserved.
+//  Created by Neil MacKenzie & David Piggott on 2015-04-02.
+//  Copyright (c) 2015 Neil MacKenzie & David Piggott. All rights reserved.
 //
+//  This view contains the functionality for the primary 'Add Job' screen.
 
-//dskjhfkjsdhfkjsdf
 
 import UIKit
 
