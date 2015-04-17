@@ -51,12 +51,12 @@ class JobDetailViewController: UIViewController {
         println(allRecords[2].company)
         println(allRecords[2].note)
         
+        
         println("3 index")
         println(allRecords[3].startDate)
         println(allRecords[3].endDate)
         println(allRecords[3].company)
         println(allRecords[3].note)
-
         */
         
     }
@@ -74,7 +74,31 @@ class JobDetailViewController: UIViewController {
         notesBox.text = allRecords[0].note
         
         //Test
-        //println("The difference between start and end time is ")
+        println("The difference between start and end time is ")
+       
+        /*
+        let rightNow = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        
+        lblEnd.text = dateFormatter.stringFromDate(rightNow)
+        */
+        
+        println("Try to do math with dates")
+        var startTimeDate = allRecords[0].startDate
+        var endTimeDate = allRecords[0].endDate
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        var aaaa = dateFormatter.dateFromString(startTimeDate)
+        var bbbb = dateFormatter.dateFromString(endTimeDate)
+        println(aaaa)
+        println(bbbb)
+        var cccc = aaaa!.timeIntervalSinceDate(bbbb!)
+        println(cccc)
+        
+
         //println(allRecords[0].endDate - allRecords[0].startDate)
         
         //What should be printed
