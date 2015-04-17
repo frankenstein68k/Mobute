@@ -90,12 +90,9 @@ class FirstViewController: UIViewController {
             
             lblEnd.text = dateFormatter.stringFromDate(rightNow)
             
-            endBtn.backgroundColor = UIColor.grayColor() //Greys out the End button
-            updateObject()
-            
             allRecords[currentRecordIndex].endDate = dateFormatter.stringFromDate(rightNow) //Saves end date to object
             
-            resetFirstViewController() //Resets the page for more time entries
+            popUpConfirmation()
         }
     }
     
@@ -126,6 +123,29 @@ class FirstViewController: UIViewController {
         println(allRecords[currentRecordIndex].note)
     }
 
+    func popUpConfirmation(){
+        endBtn.backgroundColor = UIColor.grayColor() //Greys out the End button
+        updateObject()
+        
+        let alert = UIAlertController(title: "Finished?",
+            message: "If you have finished the task tap OK",
+            preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) {ACTTION -> Void in
+            self.endBtn.backgroundColor = UIColor.greenColor() //Greys out the End button
+            self.lblEnd.text = "-"
+            self.endButtonClicked = false
+        }
+        alert.addAction(cancelAction)
+
+        let okAction = UIAlertAction(title: "OK", style: .Default) {ACTION -> Void in
+            self.resetFirstViewController()
+        }
+        alert.addAction(okAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
     func resetFirstViewController(){
         println("Resetting first view controller")
         startButtonClicked = false
@@ -134,7 +154,8 @@ class FirstViewController: UIViewController {
         lblEnd.text = "-"
         compText.text = ""
         noteText.text = ""
-
+        
+        startBtn.backgroundColor = UIColor.greenColor() //Changes start button back to green, need to work on the correct shade of green
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
