@@ -28,16 +28,20 @@ class FirstViewController: UIViewController {
     //Variables
     var startButtonClicked:Bool = false
     var endButtonClicked:Bool = false
+    var infoA = ""
+    var infoB = ""
     
     //Button actions
     @IBAction func btnStart(sender: AnyObject) {
         if(!startButtonClicked){
             startButtonClicked = true
             
-            
             currentRecordIndex = findAllRecordsCount()
-            println("Current Record Index is ")
-            println(currentRecordIndex)
+
+            //Creates an object in the allRecords array
+            if (currentRecordIndex == 0) {
+                allRecords.insert(Record(), atIndex: 0) //Adds new object
+            }
             
             let rightNow = NSDate()
             let dateFormatter = NSDateFormatter()
@@ -45,36 +49,26 @@ class FirstViewController: UIViewController {
             dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
             
             lblStart.text = dateFormatter.stringFromDate(rightNow)
+            infoA = lblStart.text!
             
             endBtn.backgroundColor = UIColor.redColor() //Colours in the End Button
             
             startBtn.backgroundColor = UIColor.grayColor() //Greys out the Start Button
-            
-            allRecords.insert(Record(), atIndex: 0) //Adds new object
-            
-            println("Start button formatted but not saved")
-            println(lblStart.text)
-            
-            
-            allRecords[currentRecordIndex].startDate = dateFormatter.stringFromDate(rightNow) //Saves startdate to object
-            
-            //Cludge to save trouble farther down the line. Just automatically give end date and end date
-            allRecords[currentRecordIndex].endDate = dateFormatter.stringFromDate(rightNow)
-            
-            println("Saved to a record")
-            println(allRecords[currentRecordIndex].startDate)
+
         }
     }
 
+    //For testing purposes
     @IBAction func btnCount(sender: AnyObject) {
         println("***Record Count is..***")
         println(findAllRecordsCount())
     }
     
+    //Taken out to meet deadline, not worth the time
     @IBAction func btnUpdate(sender: AnyObject) {
         println("Update button click")
         println("*****")
-        updateObject()
+        //updateObject() //Causing issues
     }
     
     @IBAction func btnEnd(sender: AnyObject) {
@@ -86,8 +80,7 @@ class FirstViewController: UIViewController {
             dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
             
             lblEnd.text = dateFormatter.stringFromDate(rightNow)
-            
-            allRecords[currentRecordIndex].endDate = dateFormatter.stringFromDate(rightNow) //Saves end date to object
+            infoB =  lblEnd.text!
             
             popUpConfirmation()
         }
@@ -99,14 +92,15 @@ class FirstViewController: UIViewController {
     
     //Gets the length
     func findAllRecordsCount() -> Int{
-        //println("Getting record count")
-        //println(allRecords.count)
         return allRecords.count
     }
 
     func updateObject(){
-        //Start date is saved when the start date button is clicked
-        //End date is saved when the end date button is clicked
+        
+
+        
+        allRecords[currentRecordIndex].startDate = infoA
+        allRecords[currentRecordIndex].endDate = infoB
         
         //Saves the Company name
         if compText.text == ""{
@@ -128,24 +122,27 @@ class FirstViewController: UIViewController {
         println(allRecords[currentRecordIndex].endDate)
         println(allRecords[currentRecordIndex].company)
         println(allRecords[currentRecordIndex].note)
+        
+        //allRecords.insert(Record(), atIndex: 0) //Adds new object
     }
 
     func popUpConfirmation(){
         endBtn.backgroundColor = UIColor.redColor() //Greys out the End button
-        updateObject()
+        
         
         let alert = UIAlertController(title: "Finished?",
             message: "If you have finished the task tap OK",
             preferredStyle: .Alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) {ACTTION -> Void in
-            self.endBtn.backgroundColor = UIColor.greenColor() //Greys out the End button
+            self.endBtn.backgroundColor = UIColor.redColor() //Greys out the End button
             self.lblEnd.text = "-"
             self.endButtonClicked = false
         }
         alert.addAction(cancelAction)
 
         let okAction = UIAlertAction(title: "OK", style: .Default) {ACTION -> Void in
+            self.updateObject()
             self.resetFirstViewController()
         }
         alert.addAction(okAction)
@@ -163,6 +160,7 @@ class FirstViewController: UIViewController {
         noteText.text = ""
         
         startBtn.backgroundColor = UIColor(red: (64/255.0), green: (128/255.0), blue: (0), alpha: 1.0) //Changes start button back to green, need to work
+        endBtn.backgroundColor = UIColor.grayColor()
         
     }
     

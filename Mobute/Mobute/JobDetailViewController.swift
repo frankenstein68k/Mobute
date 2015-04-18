@@ -22,51 +22,13 @@ class JobDetailViewController: UIViewController {
     
     @IBOutlet weak var notesBox: UITextView!
     
-    @IBAction func loadBtn(sender: AnyObject) {
-        println("LoadButton clicked")
-        retrieveObject()
-    }
+
     
-    func retrieveObject(){
-        println("Retrieving data")
-        //Record.loadNotes()
-    
-        
-        println("zero index")
-        println(allRecords[0].startDate)
-        println(allRecords[0].endDate)
-        println(allRecords[0].company)
-        println(allRecords[0].note)
-        
-        
-        println("1 index")
-        println(allRecords[1].startDate)
-        println(allRecords[1].endDate)
-        println(allRecords[1].company)
-        println(allRecords[1].note)
-        
-        /*
-        println("2 index")
-        println(allRecords[2].startDate)
-        println(allRecords[2].endDate)
-        println(allRecords[2].company)
-        println(allRecords[2].note)
-        
-        
-        println("3 index")
-        println(allRecords[3].startDate)
-        println(allRecords[3].endDate)
-        println(allRecords[3].company)
-        println(allRecords[3].note)
-        */
-        
-    }
     
     var jobTitle = String()
     
     //Assigns the job title to the label
     override func viewWillAppear(animated: Bool) {
-        retrieveObject()
         
         jobTitleLabel.text = allRecords[0].company
         startLbl.text = allRecords[0].startDate
@@ -75,16 +37,14 @@ class JobDetailViewController: UIViewController {
         notesBox.text = allRecords[0].note
         
         //Test
-        println("The difference between start and end time is ")
-       
         /*
+        //println("The difference between start and end time is ")
         let rightNow = NSDate()
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
         lblEnd.text = dateFormatter.stringFromDate(rightNow)
-        */
         
         println("Try to do math with dates")
         var startTimeDate = allRecords[0].startDate
@@ -96,18 +56,11 @@ class JobDetailViewController: UIViewController {
         var bbbb = dateFormatter.dateFromString(endTimeDate)
         println(aaaa)
         println(bbbb)
-        //var cccc = aaaa!.timeIntervalSinceDate(bbbb!)
-        //println(cccc)
-        
+        var cccc = aaaa!.timeIntervalSinceDate(bbbb!)
+        println(cccc)
 
-        //println(allRecords[0].endDate - allRecords[0].startDate)
-        
-        //What should be printed
-        println(jobTitleLabel.text)
-        println(startLbl.text)
-        println(endLbl.text)
-        println(hoursLbl.text)
-        println(notesBox.text)
+        println(allRecords[0].endDate - allRecords[0].startDate)
+        */
         
     }
 
