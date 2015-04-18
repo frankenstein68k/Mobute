@@ -29,15 +29,7 @@ class FirstViewController: UIViewController {
     var startButtonClicked:Bool = false
     var endButtonClicked:Bool = false
     
-    //Gets the length 
-    func findAllRecordsCount() -> Int{
-        println("Getting record count")
-        Record.loadNotes()
-        println(allRecords.count)
-        return allRecords.count
-    }
-    
-    
+    //Button actions
     @IBAction func btnStart(sender: AnyObject) {
         if(!startButtonClicked){
             startButtonClicked = true
@@ -74,6 +66,11 @@ class FirstViewController: UIViewController {
         }
     }
 
+    @IBAction func btnCount(sender: AnyObject) {
+        println("***Record Count is..***")
+        println(findAllRecordsCount())
+    }
+    
     @IBAction func btnUpdate(sender: AnyObject) {
         println("Update button click")
         println("*****")
@@ -96,6 +93,16 @@ class FirstViewController: UIViewController {
         }
     }
     
+    
+    
+    //Functions 
+    
+    //Gets the length
+    func findAllRecordsCount() -> Int{
+        //println("Getting record count")
+        //println(allRecords.count)
+        return allRecords.count
+    }
 
     func updateObject(){
         //Start date is saved when the start date button is clicked
@@ -124,7 +131,7 @@ class FirstViewController: UIViewController {
     }
 
     func popUpConfirmation(){
-        endBtn.backgroundColor = UIColor.grayColor() //Greys out the End button
+        endBtn.backgroundColor = UIColor.redColor() //Greys out the End button
         updateObject()
         
         let alert = UIAlertController(title: "Finished?",
@@ -155,7 +162,8 @@ class FirstViewController: UIViewController {
         compText.text = ""
         noteText.text = ""
         
-        startBtn.backgroundColor = UIColor.greenColor() //Changes start button back to green, need to work on the correct shade of green
+        startBtn.backgroundColor = UIColor(red: (64/255.0), green: (128/255.0), blue: (0), alpha: 1.0) //Changes start button back to green, need to work
+        
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -165,6 +173,7 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        Record.loadNotes()
     }
 
     override func didReceiveMemoryWarning() {

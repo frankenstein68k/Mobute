@@ -29,7 +29,7 @@ class JobDetailViewController: UIViewController {
     
     func retrieveObject(){
         println("Retrieving data")
-        Record.loadNotes()
+        //Record.loadNotes()
     
         
         println("zero index")
@@ -38,13 +38,14 @@ class JobDetailViewController: UIViewController {
         println(allRecords[0].company)
         println(allRecords[0].note)
         
-        /*
+        
         println("1 index")
         println(allRecords[1].startDate)
         println(allRecords[1].endDate)
         println(allRecords[1].company)
         println(allRecords[1].note)
         
+        /*
         println("2 index")
         println(allRecords[2].startDate)
         println(allRecords[2].endDate)
@@ -95,8 +96,8 @@ class JobDetailViewController: UIViewController {
         var bbbb = dateFormatter.dateFromString(endTimeDate)
         println(aaaa)
         println(bbbb)
-        var cccc = aaaa!.timeIntervalSinceDate(bbbb!)
-        println(cccc)
+        //var cccc = aaaa!.timeIntervalSinceDate(bbbb!)
+        //println(cccc)
         
 
         //println(allRecords[0].endDate - allRecords[0].startDate)

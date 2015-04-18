@@ -162,6 +162,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wX-Bt-PvN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Zahlen">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="150" y="412" width="101" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnCount:" destination="9pv-A4-QxB" eventType="touchUpInside" id="aU8-T7-Sgp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -221,6 +233,7 @@
                                 <exclude reference="IGv-IU-S6J"/>
                                 <exclude reference="Ly6-uV-H4O"/>
                                 <exclude reference="FU2-fR-faK"/>
+                                <exclude reference="6wX-Bt-PvN"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="av3-cw-qBw"/>
@@ -270,6 +283,7 @@
                                 <include reference="IGv-IU-S6J"/>
                                 <include reference="Ly6-uV-H4O"/>
                                 <include reference="FU2-fR-faK"/>
+                                <include reference="6wX-Bt-PvN"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="av3-cw-qBw"/>
