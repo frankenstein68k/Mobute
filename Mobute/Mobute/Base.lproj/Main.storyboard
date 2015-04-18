@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -436,7 +436,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjJ-xF-EeX">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="127" id="0jx-PA-vNr"/>
+                                    <constraint firstAttribute="width" constant="127" id="0jx-PA-vNr">
+                                        <variation key="widthClass=compact" constant="368"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -524,7 +526,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="hzW-o0-txi" secondAttribute="trailing" constant="11" id="528-wf-5dh"/>
                             <constraint firstItem="Ubu-Kk-PdN" firstAttribute="centerY" secondItem="v7h-HV-OWw" secondAttribute="centerY" id="837-Lq-cPp"/>
                             <constraint firstItem="OHb-Yc-wGU" firstAttribute="top" secondItem="WjJ-xF-EeX" secondAttribute="bottom" constant="25" id="Acl-WE-dMI"/>
-                            <constraint firstItem="WjJ-xF-EeX" firstAttribute="top" secondItem="WRj-cG-RQz" secondAttribute="bottom" constant="35" id="FjS-eL-oCy"/>
+                            <constraint firstItem="WjJ-xF-EeX" firstAttribute="top" secondItem="WRj-cG-RQz" secondAttribute="bottom" constant="35" id="FjS-eL-oCy">
+                                <variation key="widthClass=compact" constant="19"/>
+                            </constraint>
                             <constraint firstItem="hzW-o0-txi" firstAttribute="top" secondItem="kPA-8I-uko" secondAttribute="bottom" constant="49" id="Her-D8-IS3">
                                 <variation key="widthClass=compact" constant="57"/>
                             </constraint>
